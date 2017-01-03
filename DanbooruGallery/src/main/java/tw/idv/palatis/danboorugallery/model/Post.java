@@ -75,15 +75,19 @@ public abstract class Post
                    int file_size, String file_url, String file_url_large, String file_url_preview,
                    String[] tags, String rating)
     {
+
+        String prefix = "";
+        if ( "/".equals( file_url.charAt( 0 ) ) ) { prefix = "http:"; }
+
         this.host = host;
         this.post_id = post_id;
         this.image_width = image_width;
         this.image_height = image_height;
         this.created_at = created_at;
         this.updated_at = updated_at;
-        this.file_size = file_size;
-        this.file_url = file_url;
-        this.file_url_large = file_url_large;
+        this.file_size = prefix + file_size;
+        this.file_url = prefix + file_url;
+        this.file_url_large = prefix + file_url_large;
         this.file_url_preview = file_url_preview;
         this.tags = tags;
         this.rating = rating;
