@@ -38,7 +38,7 @@ public class DanbooruGalleryBackupHelper
     extends BackupAgentHelper
 {
     private static final String KEY_SHARED_PREFS = "prefs";
-    private static final String KEY_DEFAULT_SHARED_PREFS = BuildConfig.PACKAGE_NAME + "_preferences";
+    private static final String KEY_DEFAULT_SHARED_PREFS = BuildConfig.VERSION_NAME + "_preferences";
 
     private static final String KEY_DATABASE = "database";
     private static final String KEY_DATABASE_FILE = "../databases/" + DanbooruGalleryDatabase.DATABASE_NAME;

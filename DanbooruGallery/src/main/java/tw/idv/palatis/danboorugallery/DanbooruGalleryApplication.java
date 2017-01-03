@@ -81,61 +81,9 @@ public class DanbooruGalleryApplication
     @Override
     public void uncaughtException(Thread thread, Throwable throwable)
     {
-        if (!DEBUG)
-        {
-            StringBuilder report = new StringBuilder();
 
-            report.append("------------ Version ----------\n");
-            report.append("Package: ").append(BuildConfig.PACKAGE_NAME).append("\n");
-            report.append("Version Name: ").append(BuildConfig.VERSION_NAME).append("\n");
-            report.append("Version Code: ").append(BuildConfig.VERSION_CODE).append("\n");
-            report.append("Build Type: ").append(BuildConfig.BUILD_TYPE).append("\n");
-            report.append("Flavor: ").append(BuildConfig.FLAVOR).append("\n");
-
-            StackTraceElement[] stackTrace = throwable.getStackTrace();
-            report.append("---------- Exception ----------\n");
-            report.append(throwable.toString()).append("\n\n");
-            for (StackTraceElement stack : stackTrace)
-                report.append(stack.toString()).append("\n");
-
-            // If the exception was thrown in a background thread inside
-            // AsyncTask, then the actual exception can be found with getCause
-            Throwable cause = throwable.getCause();
-            if (cause != null)
-            {
-                report.append("------------ Cause ------------\n");
-                report.append(cause.toString()).append("\n\n");
-                stackTrace = cause.getStackTrace();
-                for (StackTraceElement stack : stackTrace)
-                    report.append("    ").append(stack.toString()).append("\n");
-            }
-
-            report.append("------------ Device -----------\n");
-            report.append("Brand: ").append(Build.BRAND).append("\n");
-            report.append("Device: ").append(Build.DEVICE).append("\n");
-            report.append("Model: ").append(Build.MODEL).append("\n");
-            report.append("Id: ").append(Build.ID).append("\n");
-            report.append("Product: ").append(Build.PRODUCT).append("\n");
-
-            report.append("----------- Firmware ----------\n");
-            report.append("SDK: ").append(Build.VERSION.SDK_INT).append("\n");
-            report.append("Release: ").append(Build.VERSION.RELEASE).append("\n");
-            report.append("Incremental: ").append(Build.VERSION.INCREMENTAL).append("\n");
-
-            report.append("------ Extra Information ------\n");
-
-            Intent intent = new Intent(Intent.ACTION_SEND);
-            intent.setFlags (Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.setData(Uri.fromParts("mailto", "palatis@gmail.com", null));
-            intent.setType("message/rfc822");
-            intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "palatis@gmail.com" });
-            intent.putExtra(Intent.EXTRA_SUBJECT, "Crash Report: " + BuildConfig.PACKAGE_NAME + " " + BuildConfig.VERSION_CODE);
-            intent.putExtra(Intent.EXTRA_TEXT, report.toString());
-            startActivity(intent);
-
-            // If you don't kill the VM here the app goes into limbo
             System.exit(-1);
-        }
+
     }
 
     public static interface OnCacheClearedCallback
