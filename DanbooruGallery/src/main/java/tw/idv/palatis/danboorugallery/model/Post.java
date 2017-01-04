@@ -75,11 +75,6 @@ public abstract class Post
                    int file_size, String file_url, String file_url_large, String file_url_preview,
                    String[] tags, String rating)
     {
-        
-        file_url = file_url.replaceFirst(host.url, "http:");
-        file_url_large = file_url_large.replaceFirst(host.url, "http:");
-        file_url_preview = file_url_preview.replaceFirst(host.url, "http:");
-
         this.host = host;
         this.post_id = post_id;
         this.image_width = image_width;
@@ -87,9 +82,9 @@ public abstract class Post
         this.created_at = created_at;
         this.updated_at = updated_at;
         this.file_size =  file_size;
-        this.file_url = file_url;
-        this.file_url_large = file_url_large;
-        this.file_url_preview = file_url_preview;
+        this.file_url = file_url.replaceFirst(host.url + "//", "http://");
+        this.file_url_large = file_url_large.replaceFirst(host.url + "//", "http://");
+        this.file_url_preview = file_url_preview.replaceFirst(host.url + "//", "http://");
         this.tags = tags;
         this.rating = rating;
 
