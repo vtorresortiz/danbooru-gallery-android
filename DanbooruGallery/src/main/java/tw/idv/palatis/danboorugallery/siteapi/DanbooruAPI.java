@@ -394,13 +394,5 @@ public class DanbooruAPI
             return String.format(URL_POST_WEB, host.url, post_id);
         }
 
-        @Override
-        public String describeContent(Context context)
-        {
-            return context.getResources().getString(R.string.api_danbooru_post_description,
-                host.name, host.url, host.getAPI().getName(),
-                post_id, image_width, image_height, created_at.toString(), updated_at.toString(),
-                rating, uploader_id, uploader_name, md5, file_ext, score, score_up, score_down);
-        }
     }
 }

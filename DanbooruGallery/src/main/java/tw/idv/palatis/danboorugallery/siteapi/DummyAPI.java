@@ -101,12 +101,6 @@ class DummyAPI
         }
 
         @Override
-        public String describeContent(Context context)
-        {
-            return "";
-        }
-
-        @Override
         public String getExtras()
         {
             return "";

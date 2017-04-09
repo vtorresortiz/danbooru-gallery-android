@@ -26,7 +26,7 @@ android {
         abortOnError false
     }
     compileSdkVersion 19
-    buildToolsVersion '21.0'
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         minSdkVersion 16

@@ -32,6 +32,7 @@
         android:layout_height="match_parent"/>
 
     <LinearLayout
+        android:visibility="invisible"
         android:id="@+id/post_detail_content_controls"
         android:orientation="vertical"
         android:layout_alignParentBottom="true"

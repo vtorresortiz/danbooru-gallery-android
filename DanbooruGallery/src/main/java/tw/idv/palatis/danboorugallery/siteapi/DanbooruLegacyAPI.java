@@ -368,15 +368,6 @@ public class DanbooruLegacyAPI
         }
 
         @Override
-        public String describeContent(Context context)
-        {
-            return context.getResources().getString(R.string.api_danboorulegacy_post_description,
-                host.name, host.url, host.getAPI().getName(),
-                post_id, image_width, image_height, created_at.toString(), updated_at.toString(),
-                rating, uploader_id, md5, file_ext, score);
-        }
-
-        @Override
         public String getExtras()
         {
             JSONObject json = new JSONObject();

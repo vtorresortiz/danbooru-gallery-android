@@ -66,7 +66,9 @@ public abstract class Post
 
     public abstract String getReferer();
     public abstract String getDownloadFilename();
-    public abstract String describeContent(Context context);
+    public String describeContent(Context context){
+        return  null;
+    }
 
     public abstract String getExtras();                 // return all extra informations in a string
 

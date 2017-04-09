@@ -41,12 +41,13 @@
 
         <EditText
             android:id="@+id/dialog_new_host_input_url"
-            android:hint="@string/dialog_new_host_url"
-            android:gravity="center_vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:hint="@string/dialog_new_host_url"
+            android:inputType="textUri"
             android:minHeight="?android:listPreferredItemHeight"
-            android:inputType="textUri" />
+            android:text="http://" />
 
         <EditText
             android:id="@+id/dialog_new_host_input_login"

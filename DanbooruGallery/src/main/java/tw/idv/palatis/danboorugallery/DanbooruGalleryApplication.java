@@ -101,7 +101,6 @@ public class DanbooruGalleryApplication
                 {
                     if (file.delete())
                         return true;
-                    Log.d(TAG, "Delete " + file.getAbsolutePath() + " failed!");
                     return false;
                 }
 
